@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_stack_add_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 04:55:15 by rhonda            #+#    #+#             */
-/*   Updated: 2024/07/25 04:55:15 by rhonda           ###   ########.fr       */
+/*   Created: 2024/08/19 00:49:01 by rhonda            #+#    #+#             */
+/*   Updated: 2024/08/19 00:49:01 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "./ft_push_swap.h"
 
-int main(int argc, char **argv)
+t_stack *ft_listlast(t_stack *list)
 {
-    t_stack *a;
-
-    a = ft_process(argc, argv);
-    if (a == NULL || ft_checkdup(a))
+    while (list != NULL)
     {
-        ft_free(&a);
-        ft_error();
+        if (list->next == NULL)
+            return (list);
+        list = list->next;
     }
-    if (!ft_checksorted(a))
-        ft_sort(&a);
-    ft_free(&a);
-    return (0);
+    return (list);
+}
+
+void    ft_stack_add_back(t_stack **stack, t_stack *node)
+{
+    if (stack == NULL)
+        return ;
+    if (*stack == NULL)
+        *stack = node;
+    else
+        (ft_listlast(*stack))->next = node;
 }

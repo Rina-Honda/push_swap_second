@@ -6,7 +6,7 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 04:55:32 by rhonda            #+#    #+#             */
-/*   Updated: 2024/07/25 05:59:51 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/17 19:41:17 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 //include
 #include <unistd.h>
 #include <stddef.h>
+#include <limits.h>
+#include <stdlib.h>
 
 //define
 
@@ -31,5 +33,14 @@ typedef struct s_stack
 } t_stack;
 
 //function
+void    ft_error(void);
+void    ft_free(t_stack **list);
+int     ft_checkdup(t_stack *a);
+t_stack *ft_new_node(int num);
+t_stack *ft_parse_args(int argc, char **argv);
+void    ft_stack_add_back(t_stack **stack, t_stack *new_node);
 
-#endif FT_PUSH_SWAP_H
+int     ft_atoi(const char *str);
+char    **ft_split(char const *s, char c);
+
+#endif
