@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_list_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 04:55:15 by rhonda            #+#    #+#             */
-/*   Updated: 2024/07/25 04:55:15 by rhonda           ###   ########.fr       */
+/*   Created: 2024/08/19 01:55:06 by rhonda            #+#    #+#             */
+/*   Updated: 2024/08/19 01:55:06 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_push_swap.h"
 
-#include <stdio.h>
-
-int main(int argc, char **argv)
+t_stack *ft_listlast(t_stack *list)
 {
-    t_stack *a;
-
-    a = ft_parse_args(argc, argv);
-    if (a == NULL || ft_checkdup(a))
+    while (list != NULL)
     {
-        ft_free(&a);
-        ft_error();
-        return (0);
+        if (list->next == NULL)
+            return (list);
+        list = list->next;
     }
-    if (!ft_checksorted(a))
-        ft_sort(&a);
-    ft_free(&a);
-    return (0);
-
-    // while (a != NULL)
-    // {
-    //     printf("%ld\n", a->num);
-    //     a = a->next;
-    // }
-    // return 0;
-    
+    return (list);
 }

@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_checksorted.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 04:55:15 by rhonda            #+#    #+#             */
-/*   Updated: 2024/07/25 04:55:15 by rhonda           ###   ########.fr       */
+/*   Created: 2024/08/19 01:24:30 by rhonda            #+#    #+#             */
+/*   Updated: 2024/08/19 01:24:30 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_push_swap.h"
 
-#include <stdio.h>
-
-int main(int argc, char **argv)
+int ft_checksorted(t_stack *a)
 {
-    t_stack *a;
+    int i;
 
-    a = ft_parse_args(argc, argv);
-    if (a == NULL || ft_checkdup(a))
+    i = a->num;
+    while (a != NULL)
     {
-        ft_free(&a);
-        ft_error();
-        return (0);
+        if (i > a->num)
+            return (0);
+        i = a->num;
+        a = a->next;
     }
-    if (!ft_checksorted(a))
-        ft_sort(&a);
-    ft_free(&a);
-    return (0);
-
-    // while (a != NULL)
-    // {
-    //     printf("%ld\n", a->num);
-    //     a = a->next;
-    // }
-    // return 0;
-    
+    return (1);
 }
