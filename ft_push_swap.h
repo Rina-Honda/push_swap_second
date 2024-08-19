@@ -6,7 +6,7 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 04:55:32 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/19 03:23:22 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/20 01:36:27 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ t_stack *ft_new_node(int num);
 t_stack *ft_parse_args(int argc, char **argv);
 void    ft_stack_add_back(t_stack **stack, t_stack *new_node);
 
+void    ft_px(t_stack **y, t_stack **x, int stack, int j);
+void    ft_sx(t_stack **x, int stack, int j);
+void    ft_ss(t_stack **a, t_stack **b, int j);
 void    ft_rx(t_stack **x, int stack, int j);
 void    ft_rr(t_stack **a, t_stack **b, int j);
 void    ft_rrx(t_stack **x, int stack, int j);

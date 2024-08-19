@@ -41,19 +41,3 @@ void    ft_rr(t_stack **a, t_stack **b, int j)
 	if (j == 0)
 		write(1, "rr\n", 3);
 }
-
-// void ft_rb(t_stack **b, int j)
-// {
-//     t_stack *tmp;
-//     t_stack *last;
-
-//     if (*b == NULL || (*b)->next == NULL)
-//         return;
-//     tmp = *b;
-//     *b = (*b)->next;
-//     last = ft_listlast(*b);
-//     last->next = tmp;
-//     tmp->next = NULL;
-//     if (j == 0)
-//         write(1, "rb\n", 3);
-// }
