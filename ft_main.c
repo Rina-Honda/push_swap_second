@@ -19,6 +19,13 @@ int main(int argc, char **argv)
     t_stack *a;
 
     a = ft_parse_args(argc, argv);
+
+    // while (a != NULL)
+    // {
+    //     printf("%ld\n", a->num);
+    //     a = a->next;
+    // }
+
     if (a == NULL || ft_checkdup(a))
     {
         ft_free(&a);
@@ -27,14 +34,17 @@ int main(int argc, char **argv)
     }
     if (!ft_checksorted(a))
         ft_sort(&a);
+    
+    printf("=======\n");
+    while (a != NULL)
+    {
+        printf("%ld\n", a->num);
+        a = a->next;
+    }
+
     ft_free(&a);
     return (0);
 
-    // while (a != NULL)
-    // {
-    //     printf("%ld\n", a->num);
-    //     a = a->next;
-    // }
-    // return 0;
+    
     
 }

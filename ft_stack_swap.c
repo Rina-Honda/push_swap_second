@@ -16,7 +16,7 @@ void    ft_sx(t_stack **x, int stack, int j)
 {
     t_stack *tmp;
 
-    if (*b == NULL || (*b)->next == NULL)
+    if (*x == NULL || (*x)->next == NULL)
         return ;
     tmp = *x;
     *x = (*x)->next;
