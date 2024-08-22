@@ -6,7 +6,7 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 04:55:32 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/20 02:08:05 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/23 02:11:30 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,20 @@ t_stack *ft_parse_args(int argc, char **argv);
 void    ft_stack_add_back(t_stack **stack, t_stack *new_node);
 
 void    ft_sort(t_stack **a);
+int     ft_rotate_type_ab(t_stack *a, t_stack *b);
+
+int     ft_case_rarb(t_stack *a, t_stack *b, int num);
+int     ft_case_rrarrb(t_stack *a, t_stack *b, int num);
+int     ft_case_rrarb(t_stack *a, t_stack *b, int num);
+int     ft_case_rarrb(t_stack *a, t_stack *b, int num);
+int     ft_apply_rarb(t_stack **a, t_stack **b, int num, char c);
+int     ft_apply_rrarrb(t_stack **a, t_stack **b, int num, char c);
+int     ft_apply_rrarb(t_stack **a, t_stack **b, int num, char c);
+int     ft_apply_rarrb(t_stack **a, t_stack **b, int num, char c);
+
+int     ft_find_index(t_stack *x, int num);
+int     ft_find_place_b(t_stack *b, int num_push);
+int     ft_find_place_a(t_stack *a, int num_push);
 
 void    ft_px(t_stack **y, t_stack **x, int stack, int j);
 void    ft_sx(t_stack **x, int stack, int j);
