@@ -6,11 +6,11 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 19:33:57 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/19 01:08:45 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/26 01:41:08 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_push_swap.h"
+#include "ft_push_swap.h"
 
 int ft_atoi(const char *str)
 {

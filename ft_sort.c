@@ -6,13 +6,13 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 01:44:49 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/25 23:58:34 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/26 01:24:56 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void    ft_sort_b_till_three(t_stack **a, t_stack **b)
+static void    ft_sort_b_till_three(t_stack **a, t_stack **b)
 {
     int i;
     t_stack *tmp;
@@ -26,9 +26,9 @@ void    ft_sort_b_till_three(t_stack **a, t_stack **b)
             if (i == ft_case_rarb(*a, *b, tmp->num))
                 i = ft_apply_rarb(a, b, tmp->num, 'a');
             else if (i == ft_case_rrarrb(*a, *b, tmp->num))
-                i == ft_apply_rrarrb(a, b, tmp->num, 'a');
+                i = ft_apply_rrarrb(a, b, tmp->num, 'a');
             else if (i == ft_case_rarrb(*a, *b, tmp->num))
-                i == ft_apply_rarrb(a, b, tmp->num, 'a');
+                i = ft_apply_rarrb(a, b, tmp->num, 'a');
             else if (i == ft_case_rrarb(*a, *b, tmp->num))
                 i = ft_apply_rrarb(a, b, tmp->num, 'a');
             else
@@ -37,7 +37,7 @@ void    ft_sort_b_till_three(t_stack **a, t_stack **b)
     }
 }
 
-t_stack *ft_sort_b(t_stack **a)
+static t_stack *ft_sort_b(t_stack **a)
 {
     t_stack *b;
 
@@ -54,7 +54,7 @@ t_stack *ft_sort_b(t_stack **a)
 }
 
 // #include <stdio.h>
-t_stack **ft_sort_a(t_stack **a, t_stack **b)
+static t_stack **ft_sort_a(t_stack **a, t_stack **b)
 {
     int i;
     t_stack *tmp;
@@ -68,16 +68,12 @@ t_stack **ft_sort_a(t_stack **a, t_stack **b)
         while (i >= 0)
         {
             if (i == ft_case_rarb_a(*a, *b, tmp->num))
-                // printf("sort_a_rarb: %d\n", i);
                 i = ft_apply_rarb(a, b, tmp->num, 'b');
             else if (i == ft_case_rarrb_a(*a, *b, tmp->num))
-                // printf("sort_a_rarrb: %d\n", i);
                 i = ft_apply_rarrb(a, b, tmp->num, 'b');
             else if (i == ft_case_rrarrb_a(*a, *b, tmp->num))
-                // printf("sort_a_rrarrb: %d\n", i);
                 i = ft_apply_rrarrb(a, b, tmp->num, 'b');
             else if (i == ft_case_rrarb_a(*a, *b, tmp->num))
-                // printf("sort_a_rrarb: %d\n", i);
                 i = ft_apply_rrarb(a, b, tmp->num, 'b');
             else
                 tmp = tmp->next;
@@ -86,7 +82,7 @@ t_stack **ft_sort_a(t_stack **a, t_stack **b)
     return (a);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 void    ft_sort(t_stack **a)
 {
     t_stack *b;
