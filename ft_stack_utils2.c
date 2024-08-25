@@ -12,12 +12,12 @@
 
 #include "ft_push_swap.h"
 
-int ft_find_index(t_stack *x, int num)
+int ft_find_index(t_stack *x, int target)
 {
     int i;
 
     i = 0;
-    while (x->num != num)
+    while (x->num != target)
     {
         i++;
         x = x->next;
@@ -62,7 +62,7 @@ int ft_find_place_a(t_stack *a, int num_push)
     else
     {
         a_next = a->next;
-        while (num_push < a->num || a_next < num_push)
+        while (num_push < a->num || a_next->num < num_push)
         {
             a = a->next;
             a_next = a->next;

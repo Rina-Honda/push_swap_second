@@ -6,7 +6,7 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 04:55:32 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/23 02:21:53 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/25 17:44:30 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,24 @@ void    ft_stack_add_back(t_stack **stack, t_stack *new_node);
 void    ft_sort(t_stack **a);
 void    ft_sort_three(t_stack **a);
 int     ft_rotate_type_ab(t_stack *a, t_stack *b);
+int     ft_rotate_type_ba(t_stack *a, t_stack *b);
 
-int     ft_case_rarb(t_stack *a, t_stack *b, int num);
-int     ft_case_rrarrb(t_stack *a, t_stack *b, int num);
-int     ft_case_rrarb(t_stack *a, t_stack *b, int num);
-int     ft_case_rarrb(t_stack *a, t_stack *b, int num);
-int     ft_apply_rarb(t_stack **a, t_stack **b, int num, char c);
-int     ft_apply_rrarrb(t_stack **a, t_stack **b, int num, char c);
-int     ft_apply_rrarb(t_stack **a, t_stack **b, int num, char c);
-int     ft_apply_rarrb(t_stack **a, t_stack **b, int num, char c);
+int     ft_case_rarb(t_stack *a, t_stack *b, int target);
+int     ft_case_rrarrb(t_stack *a, t_stack *b, int target);
+int     ft_case_rrarb(t_stack *a, t_stack *b, int target);
+int     ft_case_rarrb(t_stack *a, t_stack *b, int target);
+int     ft_apply_rarb(t_stack **a, t_stack **b, int target, char c);
+int     ft_apply_rrarrb(t_stack **a, t_stack **b, int target, char c);
+int     ft_apply_rrarb(t_stack **a, t_stack **b, int target, char c);
+int     ft_apply_rarrb(t_stack **a, t_stack **b, int target, char c);
 
-int     ft_find_index(t_stack *x, int num);
+int     ft_case_rarb_a(t_stack *a, t_stack *b, int target);
+int     ft_case_rrarrb_a(t_stack *a, t_stack *b, int target);
+int     ft_case_rarrb_a(t_stack *a, t_stack *b, int target);
+int     ft_case_rrarb_a(t_stack *a, t_stack *b, int target);
+
+
+int     ft_find_index(t_stack *x, int target);
 int     ft_find_place_b(t_stack *b, int num_push);
 int     ft_find_place_a(t_stack *a, int num_push);
 

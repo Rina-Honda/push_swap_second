@@ -22,7 +22,7 @@ void    ft_sort_three(t_stack **a)
     else if (ft_max(*a) == 0)
     {
         ft_rx(a, 'a', 0);
-        if (!checksorted(*a))
+        if (!ft_checksorted(*a))
             ft_sx(a, 'a', 0);
     }
     else

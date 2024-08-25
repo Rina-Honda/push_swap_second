@@ -25,15 +25,16 @@ int main(int argc, char **argv)
         ft_error();
         return (0);
     }
+
     if (!ft_checksorted(a))
         ft_sort(&a);
     
-    printf("=======\n");
-    while (a != NULL)
-    {
-        printf("%ld\n", a->num);
-        a = a->next;
-    }
+    // printf("=======\n");
+    // while (a != NULL)
+    // {
+    //     printf("%ld\n", a->num);
+    //     a = a->next;
+    // }
 
     ft_free(&a);
     return (0);
