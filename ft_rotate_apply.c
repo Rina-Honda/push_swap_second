@@ -26,7 +26,7 @@ int ft_apply_rarb(t_stack **a, t_stack **b, int num, char c)
     }
     else
     {
-        while ((*b)->num != num && ft_find_place_a(*a, c) > 0)
+        while ((*b)->num != num && ft_find_place_a(*a, num) > 0)
             ft_rr(a, b, 0);
         while ((*b)->num != num)
             ft_rx(b, 'b', 0);

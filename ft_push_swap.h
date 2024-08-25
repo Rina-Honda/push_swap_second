@@ -6,7 +6,7 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 04:55:32 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/23 02:11:30 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/23 02:21:53 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_stack *ft_parse_args(int argc, char **argv);
 void    ft_stack_add_back(t_stack **stack, t_stack *new_node);
 
 void    ft_sort(t_stack **a);
+void    ft_sort_three(t_stack **a);
 int     ft_rotate_type_ab(t_stack *a, t_stack *b);
 
 int     ft_case_rarb(t_stack *a, t_stack *b, int num);
