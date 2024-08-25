@@ -33,14 +33,15 @@ int ft_rotate_type_ab(t_stack *a, t_stack *b)
     }
     return (i);
 }
-
+// #include <stdio.h>
 int ft_rotate_type_ba(t_stack *a, t_stack *b)
 {
     int i;
     t_stack *tmp;
 
     tmp = b;
-    i = ft_case_rrarrb_a(a, b, a->num);
+    i = ft_case_rrarrb_a(a, b, b->num);
+    // printf("rotate_type_ba: %d\n", i);
     while (tmp != NULL)
     {
         if (i > ft_case_rarb_a(a, b, tmp->num))
@@ -53,5 +54,6 @@ int ft_rotate_type_ba(t_stack *a, t_stack *b)
             i = ft_case_rrarb_a(a, b, tmp->num);
         tmp = tmp->next;
     }
+    // printf("rotate_type_ba: %d\n", i);
     return (i);
 }

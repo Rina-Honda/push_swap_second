@@ -41,7 +41,7 @@ int ft_apply_rrarrb(t_stack **a, t_stack **b, int num, char c)
 {
     if (c == 'a')
     {
-        while ((*a)->num != num && ft_find_place_b(*b, num) > num)
+        while ((*a)->num != num && ft_find_place_b(*b, num) > 0)
             ft_rrr(a, b, 0);
         while ((*a)->num != num)
             ft_rrx(a, 'a', 0);
@@ -51,7 +51,7 @@ int ft_apply_rrarrb(t_stack **a, t_stack **b, int num, char c)
     }
     else
     {
-        while ((*b)->num != c && ft_find_place_a(*a, num) > 0)
+        while ((*b)->num != num && ft_find_place_a(*a, num) > 0)
             ft_rrr(a, b, 0);
         while ((*b)->num != num)
             ft_rrx(b, 'b', 0);
@@ -80,6 +80,7 @@ int ft_apply_rrarb(t_stack **a, t_stack **b, int num, char c)
             ft_rx(b, 'b', 0);
         ft_px(b, a, 'a', 0);
     }
+    return (-1);
 }
 
 int ft_apply_rarrb(t_stack **a, t_stack **b, int num, char c)

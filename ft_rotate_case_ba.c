@@ -52,6 +52,6 @@ int ft_case_rrarb_a(t_stack *a, t_stack *b, int target)
     i = 0;
     if (ft_find_place_a(a, target))
         i = ft_listsize(a) - ft_find_place_a(a, target);
-    i += ft_find_index(a, target);
+    i += ft_find_index(b, target);
     return (i);
 }

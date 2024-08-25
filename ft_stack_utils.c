@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_push_swap.h"
+#include "ft_push_swap.h"
 
 t_stack *ft_listlast(t_stack *list)
 {
-    while (list != NULL)
-    {
-        if (list->next == NULL)
-            return (list);
+    if (list == NULL)
+        return (NULL);
+    while (list->next != NULL)
         list = list->next;
-    }
     return (list);
 }
 

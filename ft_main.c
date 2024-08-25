@@ -26,6 +26,9 @@ int main(int argc, char **argv)
         return (0);
     }
 
+    // int c = ft_checksorted(a);
+    // printf("%d\n", c);
+
     if (!ft_checksorted(a))
         ft_sort(&a);
     

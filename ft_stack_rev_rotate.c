@@ -19,6 +19,7 @@ void ft_rrx(t_stack **x, int stack, int j)
 
     if (*x == NULL || (*x)->next == NULL)
         return;
+    last = *x;
     while (last->next != NULL)
     {
         pre_last = last;
