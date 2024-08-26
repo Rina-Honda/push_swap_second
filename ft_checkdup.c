@@ -17,7 +17,7 @@ int ft_checkdup(t_stack *a)
     t_stack *tmp;
 
     while (a != NULL) {
-        tmp = a->next;
+    	tmp = a->next;
         while(tmp != NULL)
         {
             if (a->num == tmp->num)

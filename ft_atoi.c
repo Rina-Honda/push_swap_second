@@ -6,7 +6,7 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 19:33:57 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/26 01:41:08 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/26 01:49:29 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 int ft_atoi(const char *str)
 {
-    int mod;
-    long long i;
+	int mod;
+	long long i;
 
-    i = 0;
-    mod = 1;
-    while (*str == ' ' || *str == '\t' || *str == '\n'
-            || *str == '\f' || *str == '\v' || *str == '\r')
-            str++;
-    if (*str == '-')
-    {
-        mod = -1;
-        str++;
-    }
-    else if (*str == '+')
-        str++;
-    while (*str != '\0')
-    {
-        i = i * 10 + (*str - '0');
-        str++;
-    }
-    if ((i * mod) < INT_MIN || INT_MAX < (i * mod))
-        ft_error();
-    return (i * mod);
+	i = 0;
+	mod = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+			|| *str == '\f' || *str == '\v' || *str == '\r')
+			str++;
+	if (*str == '-')
+	{
+		mod = -1;
+		str++;
+	}
+	else if (*str == '+')
+		str++;
+	while (*str != '\0')
+	{
+		i = i * 10 + (*str - '0');
+		str++;
+	}
+	if ((i * mod) < INT_MIN || INT_MAX < (i * mod))
+		ft_error();
+	return (i * mod);
 }
