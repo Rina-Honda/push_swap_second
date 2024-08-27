@@ -12,17 +12,17 @@
 
 #include "./ft_push_swap.h"
 
-int ft_checksorted(t_stack *a)
+int	ft_checksorted(t_stack *a)
 {
-    int i;
+	int	i;
 
-    i = a->num;
-    while (a != NULL)
-    {
-        if (i > a->num)
-            return (0);
-        i = a->num;
-        a = a->next;
-    }
-    return (1);
+	i = a->num;
+	while (a != NULL)
+	{
+		if (i > a->num)
+			return (0);
+		i = a->num;
+		a = a->next;
+	}
+	return (1);
 }

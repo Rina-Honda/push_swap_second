@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-void ft_error(void)
+void	ft_error(void)
 {
-    write(2, "Error\n", 6);
+	write(2, "Error\n", 6);
 }

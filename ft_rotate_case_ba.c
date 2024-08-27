@@ -12,46 +12,46 @@
 
 #include "ft_push_swap.h"
 
-int ft_case_rarb_a(t_stack *a, t_stack *b, int target)
+int	ft_case_rarb_a(t_stack *a, t_stack *b, int target)
 {
-    int i;
+	int	i;
 
-    i = ft_find_place_a(a, target);
-    if (i < ft_find_index(b, target))
-        i = ft_find_index(b, target);
-    return (i);
+	i = ft_find_place_a(a, target);
+	if (i < ft_find_index(b, target))
+		i = ft_find_index(b, target);
+	return (i);
 }
 
-int ft_case_rrarrb_a(t_stack *a, t_stack *b, int target)
+int	ft_case_rrarrb_a(t_stack *a, t_stack *b, int target)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (ft_find_place_a(a, target))
-        i = ft_listsize(a) - ft_find_place_a(a, target);
-    if ((i < (ft_listsize(b) - ft_find_index(b, target))) && ft_find_index(b, target))
-        i = ft_listsize(b) - ft_find_index(b, target);
-    return (i);
+	i = 0;
+	if (ft_find_place_a(a, target))
+		i = ft_listsize(a) - ft_find_place_a(a, target);
+	if ((i < (ft_listsize(b) - ft_find_index(b, target))) && ft_find_index(b, target))
+		i = ft_listsize(b) - ft_find_index(b, target);
+	return (i);
 }
 
-int ft_case_rarrb_a(t_stack *a, t_stack *b, int target)
+int	ft_case_rarrb_a(t_stack *a, t_stack *b, int target)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (ft_find_index(b, target))
-        i = ft_listsize(b) - ft_find_index(b, target);
-    i += ft_find_place_a(a, target);
-    return (i);
+	i = 0;
+	if (ft_find_index(b, target))
+		i = ft_listsize(b) - ft_find_index(b, target);
+	i += ft_find_place_a(a, target);
+	return (i);
 }
 
-int ft_case_rrarb_a(t_stack *a, t_stack *b, int target)
+int	ft_case_rrarb_a(t_stack *a, t_stack *b, int target)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (ft_find_place_a(a, target))
-        i = ft_listsize(a) - ft_find_place_a(a, target);
-    i += ft_find_index(b, target);
-    return (i);
+	i = 0;
+	if (ft_find_place_a(a, target))
+		i = ft_listsize(a) - ft_find_place_a(a, target);
+	i += ft_find_index(b, target);
+	return (i);
 }

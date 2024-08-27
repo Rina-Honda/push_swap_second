@@ -12,12 +12,12 @@
 
 #include "./ft_push_swap.h"
 
-void    ft_stack_add_back(t_stack **stack, t_stack *node)
+void	ft_stack_add_back(t_stack **stack, t_stack *node)
 {
-    if (stack == NULL)
-        return ;
-    if (*stack == NULL)
-        *stack = node;
-    else
-        (ft_listlast(*stack))->next = node;
+	if (stack == NULL)
+		return ;
+	if (*stack == NULL)
+		*stack = node;
+	else
+		(ft_listlast(*stack))->next = node;
 }

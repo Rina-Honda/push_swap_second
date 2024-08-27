@@ -6,22 +6,22 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 19:33:57 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/26 01:49:29 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/08/27 18:06:07 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int mod;
-	long long i;
+	int			mod;
+	long long	i;
 
 	i = 0;
 	mod = 1;
 	while (*str == ' ' || *str == '\t' || *str == '\n'
-			|| *str == '\f' || *str == '\v' || *str == '\r')
-			str++;
+		|| *str == '\f' || *str == '\v' || *str == '\r')
+		str++;
 	if (*str == '-')
 	{
 		mod = -1;

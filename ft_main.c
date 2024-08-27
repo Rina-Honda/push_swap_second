@@ -14,31 +14,31 @@
 
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_stack *a;
+	t_stack	*a;
 
-    a = ft_parse_args(argc, argv);
-    if (a == NULL || ft_checkdup(a))
-    {
-        ft_free(&a);
-        ft_error();
-        return (0);
-    }
+	a = ft_parse_args(argc, argv);
+	if (a == NULL || ft_checkdup(a))
+	{
+		ft_free(&a);
+		ft_error();
+		return (0);
+	}
 
-    // int c = ft_checksorted(a);
-    // printf("%d\n", c);
+	// int c = ft_checksorted(a);
+	// printf("%d\n", c);
 
-    if (!ft_checksorted(a))
-        ft_sort(&a);
-    
-    // printf("=======\n");
-    // while (a != NULL)
-    // {
-    //     printf("%ld\n", a->num);
-    //     a = a->next;
-    // }
+	if (!ft_checksorted(a))
+		ft_sort(&a);
+	
+	// printf("=======\n");
+	// while (a != NULL)
+	// {
+	//     printf("%ld\n", a->num);
+	//     a = a->next;
+	// }
 
-    ft_free(&a);
-    return (0);
+	ft_free(&a);
+	return (0);
 }

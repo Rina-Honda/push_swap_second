@@ -12,52 +12,52 @@
 
 #include "ft_push_swap.h"
 
-t_stack *ft_listlast(t_stack *list)
+t_stack	*ft_listlast(t_stack *list)
 {
-    if (list == NULL)
-        return (NULL);
-    while (list->next != NULL)
-        list = list->next;
-    return (list);
+	if (list == NULL)
+		return (NULL);
+	while (list->next != NULL)
+		list = list->next;
+	return (list);
 }
 
-int ft_listsize(t_stack *list)
+int	ft_listsize(t_stack *list)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (list != NULL)
-    {
-        list = list->next;
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (list != NULL)
+	{
+		list = list->next;
+		i++;
+	}
+	return (i);
 }
 
-int ft_min(t_stack *a)
+int	ft_min(t_stack *a)
 {
-    int i;
+	int	i;
 
-    i = a->num;
-    while (a != NULL)
-    {
-        if (a->num < i)
-            i = a->num;
-        a = a->next;
-    }
-    return (i);
+	i = a->num;
+	while (a != NULL)
+	{
+		if (a->num < i)
+			i = a->num;
+		a = a->next;
+	}
+	return (i);
 }
 
-int ft_max(t_stack *a)
+int	ft_max(t_stack *a)
 {
-    int i;
+	int	i;
 
-    i = a->num;
-    while (a != NULL)
-    {
-        if (a->num > i)
-            i = a->num;
-        a = a->next;
-    }
-    return (i);
+	i = a->num;
+	while (a != NULL)
+	{
+		if (a->num > i)
+			i = a->num;
+		a = a->next;
+	}
+	return (i);
 }

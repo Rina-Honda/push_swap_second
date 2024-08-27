@@ -12,29 +12,29 @@
 
 #include "./ft_push_swap.h"
 
-void    ft_rx(t_stack **x, int stack, int j)
+void	ft_rx(t_stack **x, int stack, int j)
 {
-    t_stack *tmp;
-	t_stack *last;
+	t_stack	*tmp;
+	t_stack	*last;
 
-    if (*x == NULL || (*x)->next == NULL)
-        return ;
-    tmp = *x;
-    *x = (*x)->next;
-    last = ft_listlast(*x);
+	if (*x == NULL || (*x)->next == NULL)
+		return ;
+	tmp = *x;
+	*x = (*x)->next;
+	last = ft_listlast(*x);
 	last->next = tmp;
 	tmp->next = NULL;
-    if (j == 0)
-    {
+	if (j == 0)
+	{
 		ft_putchar('r');
 		ft_putchar(stack);
 		ft_putchar('\n');
 	}
 }
 
-void    ft_rr(t_stack **a, t_stack **b, int j)
+void	ft_rr(t_stack **a, t_stack **b, int j)
 {
-	if (*a == NULL || (*a)->next == NULL || *b == NULL || (*b)->next)
+	if (*a == NULL || (*a)->next == NULL || *b == NULL || (*b)->next == NULL)
 		return ;
 	ft_rx(a, 'a', 1);
 	ft_rx(b, 'b', 1);

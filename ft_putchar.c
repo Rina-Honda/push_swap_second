@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-void    ft_putchar(int c)
+void	ft_putchar(int c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }

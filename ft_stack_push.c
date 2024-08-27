@@ -12,20 +12,20 @@
 
 #include "./ft_push_swap.h"
 
-void    ft_px(t_stack **y, t_stack **x, int stack, int j)
+void	ft_px(t_stack **y, t_stack **x, int stack, int j)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if (*y == NULL)
-        return ;
-    tmp = *x;
-    *x = *y;
-    *y = (*y)->next;
-    (*x)->next = tmp;
-    if (j == 0)
-    {
-        ft_putchar('p');
-        ft_putchar(stack);
-        ft_putchar('\n');
-    }
+	if (*y == NULL)
+		return ;
+	tmp = *x;
+	*x = *y;
+	*y = (*y)->next;
+	(*x)->next = tmp;
+	if (j == 0)
+	{
+		ft_putchar('p');
+		ft_putchar(stack);
+		ft_putchar('\n');
+	}
 }
