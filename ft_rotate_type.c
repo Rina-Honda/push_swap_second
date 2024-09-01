@@ -60,7 +60,7 @@
 
 t_rotation ft_rotate_type_ab(t_stack *a, t_stack *b)
 {
-    t_rotation result = {0, INT_MAX};  // 初期値を設定
+    t_rotation result = {0, INT_MAX, 0};  // 初期値を設定
     t_stack *tmp = a;
     int cost;
 
@@ -71,6 +71,7 @@ t_rotation ft_rotate_type_ab(t_stack *a, t_stack *b)
         {
             result.type = 1;
             result.cost = cost;
+			result.target = tmp->num;
         }
 
         cost = ft_case_rrarrb(a, b, tmp->num);
@@ -78,6 +79,7 @@ t_rotation ft_rotate_type_ab(t_stack *a, t_stack *b)
         {
             result.type = 2;
             result.cost = cost;
+			result.target = tmp->num;
         }
 
         cost = ft_case_rarrb(a, b, tmp->num);
@@ -85,6 +87,7 @@ t_rotation ft_rotate_type_ab(t_stack *a, t_stack *b)
         {
             result.type = 3;
             result.cost = cost;
+			result.target = tmp->num;
         }
 
         cost = ft_case_rrarb(a, b, tmp->num);
@@ -92,6 +95,7 @@ t_rotation ft_rotate_type_ab(t_stack *a, t_stack *b)
         {
             result.type = 4;
             result.cost = cost;
+			result.target = tmp->num;
         }
 
         tmp = tmp->next;
@@ -105,7 +109,7 @@ t_rotation ft_rotate_type_ab(t_stack *a, t_stack *b)
 // #include <stdio.h>
 t_rotation ft_rotate_type_ba(t_stack *a, t_stack *b)
 {
-    t_rotation result = {0, INT_MAX};  // 初期値を設定
+    t_rotation result = {0, INT_MAX, 0};  // 初期値を設定
     t_stack *tmp = b;
     int cost;
 
@@ -116,6 +120,7 @@ t_rotation ft_rotate_type_ba(t_stack *a, t_stack *b)
         {
             result.type = 1;
             result.cost = cost;
+			result.target = tmp->num;
         }
 
         cost = ft_case_rrarrb_a(a, b, tmp->num);
@@ -123,6 +128,7 @@ t_rotation ft_rotate_type_ba(t_stack *a, t_stack *b)
         {
             result.type = 2;
             result.cost = cost;
+			result.target = tmp->num;
         }
 
         cost = ft_case_rarrb_a(a, b, tmp->num);
@@ -130,6 +136,7 @@ t_rotation ft_rotate_type_ba(t_stack *a, t_stack *b)
         {
             result.type = 3;
             result.cost = cost;
+			result.target = tmp->num;
         }
 
         cost = ft_case_rrarb_a(a, b, tmp->num);
@@ -137,6 +144,7 @@ t_rotation ft_rotate_type_ba(t_stack *a, t_stack *b)
         {
             result.type = 4;
             result.cost = cost;
+			result.target = tmp->num;
         }
 
         tmp = tmp->next;

@@ -6,7 +6,7 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 04:55:32 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/29 00:21:22 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/09/01 21:18:44 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_rotation
 {
     int type;  // 回転タイプ（1: rarb, 2: rrarrb, 3: rarrb, 4: rrarb）
     int cost;  // 回転コスト
+	int target;
 } t_rotation;
 
 //function

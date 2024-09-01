@@ -6,7 +6,7 @@
 /*   By: rhonda <rhonda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 01:44:49 by rhonda            #+#    #+#             */
-/*   Updated: 2024/08/29 00:26:10 by rhonda           ###   ########.fr       */
+/*   Updated: 2024/09/01 21:26:12 by rhonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,38 +24,24 @@ void print_stack(t_stack *stack)
 static void ft_sort_b_till_three(t_stack **a, t_stack **b)
 {
     t_rotation rot;
-    t_stack *tmp;
-    
-    // printf("check_ft_sort_b_till_three\n");
+    // t_stack *tmp;
+
     while (ft_listsize(*a) > 3 && !ft_checksorted(*a))
     {
-        tmp = *a;
+        // tmp = *a;
         rot = ft_rotate_type_ab(*a, *b);
-        
-        // printf("Rotate type: %d, Cost: %d\n", rot.type, rot.cost);
-        
+		// printf("type: %d\n", rot.type);
         if (rot.type == 1)
-            ft_apply_rarb(a, b, tmp->num, 'a');
+            ft_apply_rarb(a, b, rot.target, 'a');
         else if (rot.type == 2)
-            ft_apply_rrarrb(a, b, tmp->num, 'a');
+            ft_apply_rrarrb(a, b, rot.target, 'a');
         else if (rot.type == 3)
-            ft_apply_rarrb(a, b, tmp->num, 'a');
+            ft_apply_rarrb(a, b, rot.target, 'a');
         else if (rot.type == 4)
-            ft_apply_rrarb(a, b, tmp->num, 'a');
+            ft_apply_rrarb(a, b, rot.target, 'a');
         else
-        {
-            // printf("Forcing element move\n");
             ft_px(a, b, 'b', 0);
-        }
-        
-        // printf("Current size of stack A: %d\n", ft_listsize(*a));
-        // printf("Current size of stack B: %d\n", ft_listsize(*b));
-        // printf("Stack A: ");
-        // print_stack(*a);
-        // printf("Stack B: ");
-        // print_stack(*b);
     }
-    // printf("Exiting ft_sort_b_till_three\n");
 }
 
 static t_stack	*ft_sort_b(t_stack **a)
@@ -67,12 +53,10 @@ static t_stack	*ft_sort_b(t_stack **a)
 		ft_px(a, &b, 'b', 0);
 	if (ft_listsize(*a) > 3 && !ft_checksorted(*a))
 		ft_px(a, &b, 'b', 0);
-	// printf("check_before_ft_sort_b_till_three\n");	
-	// if (ft_listsize(*a) > 3 && !ft_checksorted(*a))
-	ft_sort_b_till_three(a, &b);
+	if (ft_listsize(*a) > 3 && !ft_checksorted(*a))
+		ft_sort_b_till_three(a, &b);
 	if (!ft_checksorted(*a))
 		ft_sort_three(a);
-	// printf("check_after_ft_sort_b\n");
 	
 	return (b);
 }
@@ -80,38 +64,26 @@ static t_stack	*ft_sort_b(t_stack **a)
 static void ft_sort_a(t_stack **a, t_stack **b)
 {
     t_rotation rot;
-    t_stack *tmp;
+    // t_stack *tmp;
 
-    // printf("Entering ft_sort_a\n");
     while (*b != NULL)
     {
-        tmp = *b;
+        // tmp = *b;
         rot = ft_rotate_type_ba(*a, *b);
         
         // printf("Rotate type: %d, Cost: %d\n", rot.type, rot.cost);
         
         if (rot.type == 1)
-            ft_apply_rarb(a, b, tmp->num, 'b');
+            ft_apply_rarb(a, b, rot.target, 'b');
         else if (rot.type == 2)
-            ft_apply_rrarrb(a, b, tmp->num, 'b');
+            ft_apply_rrarrb(a, b, rot.target, 'b');
         else if (rot.type == 3)
-            ft_apply_rarrb(a, b, tmp->num, 'b');
+            ft_apply_rarrb(a, b, rot.target, 'b');
         else if (rot.type == 4)
-            ft_apply_rrarb(a, b, tmp->num, 'b');
+            ft_apply_rrarb(a, b, rot.target, 'b');
         else
-        {
-            // printf("Forcing element move\n");
             ft_px(b, a, 'a', 0);
-        }
-        
-        // printf("Current size of stack A: %d\n", ft_listsize(*a));
-        // printf("Current size of stack B: %d\n", ft_listsize(*b));
-        // printf("Stack A: ");
-        // print_stack(*a);
-        // printf("Stack B: ");
-        // print_stack(*b);
     }
-    // printf("Exiting ft_sort_a\n");
 }
 
 void	ft_sort(t_stack **a)
